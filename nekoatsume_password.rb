@@ -25,5 +25,4 @@ end
 password = get_password
 latest_tweets = client.user_timeline(ENV['TWITTER_USER']).map(&:text)
 
-client.update(get_password) unless latest_tweets.include?(password)
-
+client.update(password) unless latest_tweets.include?(password)
