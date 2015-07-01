@@ -9,7 +9,7 @@ def get_password
   uri = URI.parse('http://hpmobile.jp/app/nekoatsume/neko_daily.php')
 
   response = Net::HTTP.get_response(uri)
-  response.body.split(',')[1]
+  response.body.split(',')[1].force_encoding('UTF-8')
 end
 
 Dotenv.load
